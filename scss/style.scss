@@ -1,0 +1,115 @@
+.header {
+    &__menu {
+        text-decoration: none;
+        font-size: 2em;
+    }
+
+    &__nav {
+        background-color: #061B3A;
+    }
+}
+
+.menu {
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    width: 0%;
+    background-color: #061B3A;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    &__ul {
+        padding: 0;
+    }
+
+    &__a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        padding: 12px 2rem;
+        font-size: 1.2em;
+
+        &:hover {
+            background-color: white;
+            color: #061B3A;
+        }
+    }
+    
+}
+
+.main {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    .card {
+        max-width: 25%;
+        background-color: white;
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        padding: 1rem;
+
+        &__top {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid #c4c4c4;
+            padding-bottom: 1rem;
+        }
+
+        &__imgcontainer {
+            width: 70px;
+            height: 70px;
+            margin: 0;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            object-fit: cover;
+        }
+
+        &__texts {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__name {
+            font-weight: bold;
+        }
+
+        &__birthdate {
+            color: #908f8f;
+        }
+
+
+        &__middle {
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #c4c4c4;
+            padding-bottom: 1rem;
+        }
+
+        &__obs-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        &__bottom {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &__a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
