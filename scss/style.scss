@@ -60,6 +60,28 @@
         border-radius: 10px;
         padding: 1rem;
 
+        .top {
+            transition: 200ms;
+        }
+
+        .middle {
+            transition: 400ms;
+        }
+
+        &:hover {
+            border: 1px solid transparent;
+            cursor: default;
+
+            .top {
+                transform: translateY(-3rem);
+                border-bottom: 1px solid transparent;
+            }
+
+            .middle {
+                transform: translateY(-2rem);
+            }
+        }
+
         &__top {
             display: flex;
             align-items: center;
@@ -99,7 +121,6 @@
             margin: 1rem 0;
             display: flex;
             flex-direction: column;
-            border-bottom: 1px solid #c4c4c4;
             padding-bottom: 1rem;
         }
 
