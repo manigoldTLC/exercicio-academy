@@ -1,4 +1,4 @@
-@import 'add-form';
+@import 'forms';
 
 
 
@@ -10,13 +10,16 @@
 
     &__nav {
         background-color: #061B3A;
+        padding: 0.5rem 1rem;
+        height: 4rem;
     }
 }
 
 .menu {
     font-family: 'Inter', sans-serif;
     height: 100%;
-    width: 0%;
+    margin-top: 4rem;
+    width: 13%;
     background-color: #061B3A;
     position: fixed;
     z-index: 1;
@@ -44,11 +47,14 @@
 }
 
 .main {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin: 10rem 0 5rem 13%;
+
+    &__section {
+        max-width: 100%;
+    }
 
     .card {
-        max-width: 25%;
+        width: 45%;
         background-color: white;
         border: 1px solid #c4c4c4;
         border-radius: 10px;
