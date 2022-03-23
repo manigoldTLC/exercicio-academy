@@ -1,0 +1,20 @@
+.header {
+    font-family: 'Inter', sans-serif;
+    background-color: $--nav-menu-color;
+
+    &__nav {
+        padding: 0 2rem;
+    }
+
+    &__menu-icon {
+        color: $--white-text-color;  
+    }
+
+    .link {
+        color: $--white-text-color;
+
+        &:hover {
+            color: $--grey-text-color;
+        }
+    }
+}

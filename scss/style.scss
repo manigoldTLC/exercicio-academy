@@ -1,3 +1,11 @@
+$--white-text-color: #FEFEFE;
+$--grey-text-color: #717171;
+$--black-text-color: #272626;
+$--border-color: #C4C4C4;
+$--nav-menu-color: #061B3A;
+$--hover-menu-color: #FFFFFF;
+$--hover-menu-text-color: #061B3A;
+
 @mixin for-phone-only {
     @media (max-width: 767.98px) { @content; }
 }
@@ -11,62 +19,8 @@
 }
 
 
-@import 'forms';
+@import 'forms', 'header', 'menu';
 
-
-.header {
-    font-family: 'Inter', sans-serif;
-    background-color: #061B3A;
-
-    &__nav {
-        padding: 0 2rem;
-    }
-
-    &__menu-icon {
-        color: white;  
-    }
-
-    .link {
-        color: white;
-
-        &:hover {
-            color: #908f8f;
-        }
-    }
-}
-
-.menu {
-    font-family: 'Inter', sans-serif;
-    height: 100%;
-    margin-top: 3.5rem;
-    width: 13%;
-    background-color: #061B3A;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-
-    @include for-phone-only { display: none; }
-    @include for-tablet-only { display: none; }
-
-    &__ul {
-        padding: 0;
-    }
-
-    &__a {
-        color: white;
-        display: block;
-        text-decoration: none;
-        padding: 12px 2rem;
-        font-size: 1em;
-
-        &:hover {
-            background-color: white;
-            color: #061B3A;
-        }
-    }
-}
 
 .main {
     margin: 10rem 0 5rem 13%;
@@ -82,10 +36,14 @@
         @include for-phone-only { padding: 0.5rem; }
     }
 
+    &__h1 {
+        color: $--black-text-color;
+        font-weight: bold;
+    }
+
     .card {
         width: 45%;
-        background-color: white;
-        border: 1px solid #c4c4c4;
+        border: 1px solid $--border-color;
         border-radius: 10px;
         padding: 1rem;
 
@@ -123,7 +81,7 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            border-bottom: 1px solid #c4c4c4;
+            border-bottom: 1px solid $--border-color;
             padding-bottom: 1rem;
         }
 
@@ -147,12 +105,12 @@
 
         &__name {
             font-weight: bold;
+            color: $--black-text-color;
         }
 
         &__birthdate {
-            color: #908f8f;
+            color: $--grey-text-color;
         }
-
 
         &__middle {
             margin: 1rem 0;
@@ -165,6 +123,11 @@
             font-weight: bold;
             font-size: 1.1em;
             margin-bottom: 10px;
+            color: $--black-text-color;
+        }
+
+        &__obs {
+            color: $--black-text-color;
         }
 
         &__bottom {

@@ -1,0 +1,33 @@
+.menu {
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    margin-top: 3.5rem;
+    width: 13%;
+    background-color: $--nav-menu-color;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    @include for-phone-only { display: none; }
+    @include for-tablet-only { display: none; }
+
+    &__item {
+        display: flex;
+        width: 100%;
+    }
+
+    &__a {
+        color: $--white-text-color;
+        text-decoration: none;
+        padding: 12px 2rem;
+        font-size: 1em;
+        width: 100%;
+
+        &:hover {
+            background-color: $--hover-menu-color;
+            color: $--hover-menu-text-color;
+        }
+    }
+}

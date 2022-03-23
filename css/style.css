@@ -14,13 +14,14 @@
 }
 .main-forms__title {
   font-weight: 700;
+  color: #272626;
 }
 .main-forms__section {
   max-width: 100%;
   padding: 5rem;
 }
 .main-forms__form {
-  border: 1px solid #c4c4c4;
+  border: 1px solid #C4C4C4;
   border-radius: 10px;
 }
 
@@ -32,13 +33,13 @@
   padding: 0 2rem;
 }
 .header__menu-icon {
-  color: white;
+  color: #FEFEFE;
 }
 .header .link {
-  color: white;
+  color: #FEFEFE;
 }
 .header .link:hover {
-  color: #908f8f;
+  color: #717171;
 }
 
 .menu {
@@ -63,18 +64,19 @@
     display: none;
   }
 }
-.menu__ul {
-  padding: 0;
+.menu__item {
+  display: flex;
+  width: 100%;
 }
 .menu__a {
-  color: white;
-  display: block;
+  color: #FEFEFE;
   text-decoration: none;
   padding: 12px 2rem;
   font-size: 1em;
+  width: 100%;
 }
 .menu__a:hover {
-  background-color: white;
+  background-color: #FFFFFF;
   color: #061B3A;
 }
 
@@ -101,10 +103,13 @@
     padding: 0.5rem;
   }
 }
+.main__h1 {
+  color: #272626;
+  font-weight: bold;
+}
 .main .card {
   width: 45%;
-  background-color: white;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #C4C4C4;
   border-radius: 10px;
   padding: 1rem;
 }
@@ -138,7 +143,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid #C4C4C4;
   padding-bottom: 1rem;
 }
 .main .card__imgcontainer {
@@ -158,9 +163,10 @@
 }
 .main .card__name {
   font-weight: bold;
+  color: #272626;
 }
 .main .card__birthdate {
-  color: #908f8f;
+  color: #717171;
 }
 .main .card__middle {
   margin: 1rem 0;
@@ -172,6 +178,10 @@
   font-weight: bold;
   font-size: 1.1em;
   margin-bottom: 10px;
+  color: #272626;
+}
+.main .card__obs {
+  color: #272626;
 }
 .main .card__bottom {
   display: flex;
