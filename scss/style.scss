@@ -1,5 +1,3 @@
-@import 'forms';
-
 @mixin for-phone-only {
     @media (max-width: 767.98px) { @content; }
 }
@@ -12,7 +10,12 @@
     @media (min-width: 1200px) { @content; }
 }
 
+
+@import 'forms';
+
+
 .header {
+    font-family: 'Inter', sans-serif;
     background-color: #061B3A;
 
     &__nav {
@@ -20,8 +23,15 @@
     }
 
     &__menu-icon {
+        color: white;  
+    }
+
+    .link {
         color: white;
-        
+
+        &:hover {
+            color: #908f8f;
+        }
     }
 }
 
@@ -49,21 +59,21 @@
         display: block;
         text-decoration: none;
         padding: 12px 2rem;
-        font-size: 1.2em;
+        font-size: 1em;
 
         &:hover {
             background-color: white;
             color: #061B3A;
         }
     }
-    
 }
 
 .main {
     margin: 10rem 0 5rem 13%;
+    font-family: 'Inter', sans-serif;
 
-    @include for-phone-only { margin: 6rem auto; }
-    @include for-tablet-only { margin: 6rem auto; }
+    @include for-phone-only { margin: 10rem auto; }
+    @include for-tablet-only { margin: 10rem auto; }
 
     &__section {
         max-width: 100%;
@@ -84,32 +94,28 @@
             border: 1px solid transparent;
         }
 
-        .top {
-            transition: 200ms;
-        }
-
-        .middle {
-            transition: 400ms;
-        }
-
-        &:hover {
-            border-top: 1px solid transparent;
-            border-radius: 0 0 10px 10px;
-            cursor: default;
-
+        @include for-desktop-only {
             .top {
-                transform: translateY(-3rem);
-                border-bottom: 1px solid transparent;
-
-                @include for-phone-only {
-                    transform: none;
-                    border-bottom: 1px solid #c4c4c4;
-                }
+                transition: 200ms;
+            }
+    
+            .middle {
+                transition: 400ms;
             }
 
-            .middle {
-                transform: translateY(-2rem);
-                @include for-phone-only { transform: none; }
+            &:hover {
+                border-top: 1px solid transparent;
+                border-radius: 0 0 10px 10px;
+                cursor: default;
+    
+                .top {
+                    transform: translateY(-3rem);
+                    border-bottom: 1px solid transparent;
+                }
+    
+                .middle {
+                    transform: translateY(-2rem);
+                }
             }
         }
 

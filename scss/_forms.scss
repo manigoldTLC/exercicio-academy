@@ -1,0 +1,22 @@
+.main-forms {
+    margin: 10rem 0 5rem 13%;
+    font-family: 'Inter', sans-serif;
+
+    @include for-phone-only { margin: 10rem auto; }
+    @include for-tablet-only { margin: 10rem auto; }
+
+    &__title {
+        font-weight: 700;
+    }
+
+    &__section {
+        max-width: 100%;
+        padding: 5rem;
+
+    }
+
+    &__form {
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+    }
+}
