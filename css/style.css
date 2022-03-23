@@ -1,3 +1,6 @@
+.main {
+  margin: 10rem 0 5rem 13%;
+}
 .main__title {
   font-family: "Inter", sans-serif;
   font-weight: 700;
@@ -14,7 +17,12 @@
 .header__nav {
   background-color: #061B3A;
   padding: 0.5rem 1rem;
-  height: 4rem;
+  min-height: 4rem;
+}
+@media (max-width: 767.98px) {
+  .header {
+    z-index: 15;
+  }
 }
 
 .menu {
@@ -28,6 +36,16 @@
   top: 0;
   left: 0;
   overflow: hidden;
+}
+@media (max-width: 767.98px) {
+  .menu {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .menu {
+    display: none;
+  }
 }
 .menu__ul {
   padding: 0;
@@ -47,8 +65,24 @@
 .main {
   margin: 10rem 0 5rem 13%;
 }
+@media (max-width: 767.98px) {
+  .main {
+    margin: 6rem auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .main {
+    margin: 6rem auto;
+  }
+}
 .main__section {
   max-width: 100%;
+  padding: 5rem;
+}
+@media (max-width: 767.98px) {
+  .main__section {
+    padding: 0.5rem;
+  }
 }
 .main .card {
   width: 45%;
@@ -57,6 +91,12 @@
   border-radius: 10px;
   padding: 1rem;
 }
+@media (max-width: 767.98px) {
+  .main .card {
+    width: 100%;
+    border: 1px solid transparent;
+  }
+}
 .main .card .top {
   transition: 200ms;
 }
@@ -64,15 +104,27 @@
   transition: 400ms;
 }
 .main .card:hover {
-  border: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-radius: 0 0 10px 10px;
   cursor: default;
 }
 .main .card:hover .top {
   transform: translateY(-3rem);
   border-bottom: 1px solid transparent;
 }
+@media (max-width: 767.98px) {
+  .main .card:hover .top {
+    transform: none;
+    border-bottom: 1px solid #c4c4c4;
+  }
+}
 .main .card:hover .middle {
   transform: translateY(-2rem);
+}
+@media (max-width: 767.98px) {
+  .main .card:hover .middle {
+    transform: none;
+  }
 }
 .main .card__top {
   display: flex;
