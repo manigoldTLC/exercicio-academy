@@ -45,7 +45,7 @@ function cardAluno(aluno) {
 
     let linkCard = document.createElement("a");
     linkCard.classList.add("card__a");
-    linkCard.href = "#";
+    linkCard.href = "edit-form.html";
     linkCard.textContent = "editar";
 
     cardBottom.appendChild(linkCard);
