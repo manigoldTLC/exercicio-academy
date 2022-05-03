@@ -45,8 +45,18 @@ function cardAluno(aluno) {
 
     let linkCard = document.createElement("a");
     linkCard.classList.add("card__a");
-    linkCard.href = "edit-form.html";
+    linkCard.href = "#";
     linkCard.textContent = "editar";
+
+
+    linkCard.setAttribute("idAluno", aluno.nr_sequencia);
+
+    linkCard.addEventListener("click", (e) => {
+        const id = e.target.getAttribute("idAluno");
+
+        editarAluno(id);
+    });
+
 
     cardBottom.appendChild(linkCard);
 
@@ -80,7 +90,12 @@ function cardAluno(aluno) {
     card.appendChild(cardMiddle);
     card.appendChild(cardBottom);
 
+
     return card;
+}
+
+function retornaID(id) {
+    return id
 }
 
 function adicionaCardSecao(aluno) {
