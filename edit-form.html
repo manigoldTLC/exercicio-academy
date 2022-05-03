@@ -55,79 +55,79 @@
 
             <h1 class="main-forms__title text-capitalize text-center mb-5">Editar aluno</h1>
 
-            <form class="main-forms__form p-4 col-12 col-md-8">
+            <form class="main-forms__form p-4 col-12 col-md-8" id="form-editar">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" required id="nome">
+                    <input type="text" name="nm_pessoa" class="form-control" required id="nome">
                 </div>
 
                 <div class="mb-3">
                     <label for="nascimento" class="form-label">Data de nascimento</label>
-                    <input type="date" class="form-control" required id="nascimento">
+                    <input type="date" name="dt_nascimento" class="form-control" required id="nascimento">
                 </div>
 
                 <div class="mb-3">
                     <label for="cpf" class="form-label">CPF</label>
-                    <input type="text" class="form-control" required id="cpf">
+                    <input type="text" name="ds_cpf" class="form-control" required id="cpf">
                 </div>
 
                 <div class="mb-3">
                     <label for="cep" class="form-label">CEP</label>
-                    <input type="text" class="form-control" required id="cep">
+                    <input type="text" name="ds_cep" class="form-control" required id="cep">
                 </div>
 
                 <div class="mb-3">
                     <label for="endereco" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" required id="endereco">
+                    <input type="text" name="ds_logradouro" class="form-control" required id="endereco">
                 </div>
 
                 <div class="mb-3">
                     <label for="numero" class="form-label">Número</label>
-                    <input type="text" class="form-control" required id="numero">
+                    <input type="text" name="nr_sequencia" class="form-control" required id="numero">
                 </div>
 
                 <div class="mb-3">
                     <label for="complemento" class="form-label">Complemento</label>
-                    <input type="text" class="form-control" required id="complemento">
+                    <input type="text" name="ds_complemento" class="form-control" required id="complemento">
                 </div>
 
                 <div class="mb-3">
                     <label for="bairro" class="form-label">Bairro</label>
-                    <input type="text" class="form-control" required id="bairro">
+                    <input type="text" name="ds_bairro" class="form-control" required id="bairro">
                 </div>
 
                 <div class="mb-3">
                     <label for="cidade" class="form-label">Cidade</label>
-                    <input type="text" class="form-control" required id="cidade">
+                    <input type="text" name="ds_cidade" class="form-control" required id="cidade">
                 </div>
 
                 <div class="mb-3">
                     <label for="estado" class="form-label">Estado</label>
-                    <input type="text" class="form-control" required id="estado">
+                    <input type="text" name="estado" class="form-control" required id="estado">
                 </div>
 
                 <div class="mb-3">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" required id="telefone">
+                    <input type="tel" name="ds_telefone" class="form-control" required id="telefone">
                 </div>
 
                 <div class="mb-3">
                     <label for="celular" class="form-label">Celular</label>
-                    <input type="tel" class="form-control" required id="celular">
+                    <input type="tel" name="ds_numero" class="form-control" required id="celular">
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" required id="email">
+                    <input type="email" name="ds_email" class="form-control" required id="email">
                 </div>
 
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Observações:</label>
-                    <textarea class="form-control" required id="message-text"
+                    <textarea class="form-control" name="ds_observacao" required id="message-text"
                         placeholder="Escreva sua mensagem"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100 p-2">Editar aluno</button>
+                <button type="submit" class="btn btn-primary w-100 p-2" id="edita-aluno">Editar aluno</button>
             </form>
         </section>
     </main>
@@ -135,6 +135,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
+    <script src="js/patch-alunos.js"></script>
 
 </body>
 
