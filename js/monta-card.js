@@ -12,13 +12,15 @@ function getAlunos(alunos) {
                     </figure>
                 </div>
 
-                <span class="card__name">${nullValue(aluno.nm_pessoa, "Nome não informado")}</span>
-                <span class="card__birthdate">${nullValue(aluno.dt_nascimento, "Data de nascimento não informado")}</span>
+                <div class="d-flex flex-column" data-id=${aluno.nr_sequencia}>
+                    <span class="card__name">${nullValue(aluno.nm_pessoa, "Nome não informado")}</span>
+                    <span class="card__birthdate">${nullValue(aluno.dt_nascimento, "Data de nascimento não informado")}</span>
 
-                <span class="card__obs-title">Observações</span>
-                <span class="card__obs">${nullValue(aluno.ds_observacao, "Nenhuma observacao informada")}</span>
+                    <span class="card__obs-title">Observações</span>
+                    <span class="card__obs">${nullValue(aluno.ds_observacao, "Nenhuma observacao informada")}</span>
 
-                <button class="card__a" data-bs-toggle="modal" data-bs-target="#modal" id="editar">editar</button>
+                    <button class="card__a" data-bs-toggle="modal" data-bs-target="#modal" id="editar">editar</button>
+                </div>
 
             </article>
         `;
