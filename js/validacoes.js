@@ -1,10 +1,24 @@
-function campoRequerido(input, nomeCampo) {
-    if (input.value.length == 0) {
-        alert(`Campo ${nomeCampo} não pode estar vazio`);
+function campoRequerido(input, idElemento) {
+    if (input.length == 0) {
+        alert(`O campo ${idElemento} deve ser preenchido`);
 
         return false;
     }
     return true;
+}
+
+function limpaCampo(campo, nomeCampo) {
+    if (nomeCampo == "cpf") {
+        return campo.value.replace(".", "").replace(".", "").replace("-", "");
+    }
+
+    if (nomeCampo == "telefone") {
+        return campo.value.replace("(", "").replace(")", "").replace(" ", "").replace("-", "");
+    }
+
+    if (nomeCampo == "cep") {
+        return campo.value.replace("-", "");
+    }
 }
 
 function validaEmail(email) {
@@ -18,13 +32,13 @@ function validaCpf(strCPF) {
     let resto;
     soma = 0;
 
-    if (strCPF.value == "00000000000") {
+    if (strCPF == "00000000000") {
         alert("Insira um CPF válido");
         return false;
     }
 
     for (i = 1; i <= 9; i++) {
-        soma = soma + parseInt(strCPF.value.substring(i - 1, i)) * (11 - i);
+        soma = soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
     }
 
     resto = (soma * 10) % 11;
@@ -33,14 +47,14 @@ function validaCpf(strCPF) {
         resto = 0;
     }
 
-    if (resto != parseInt(strCPF.value.substring(9, 10))) {
+    if (resto != parseInt(strCPF.substring(9, 10))) {
         alert("Insira um CPF válido");
         return false;
     }
 
     soma = 0;
     for (i = 1; i <= 10; i++) {
-        soma = soma + parseInt(strCPF.value.substring(i - 1, i)) * (12 - i);
+        soma = soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
     }
 
     resto = (soma * 10) % 11;
@@ -49,7 +63,7 @@ function validaCpf(strCPF) {
         resto = 0;
     }
 
-    if (resto != parseInt(strCPF.value.substring(10, 11))) {
+    if (resto != parseInt(strCPF.substring(10, 11))) {
         alert("Insira um CPF válido");
         return false;
     }
