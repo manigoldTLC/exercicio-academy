@@ -46,6 +46,15 @@ $--hover-menu-text-color: #061B3A;
         border: 1px solid transparent;
         padding: 0;
 
+        @include for-desktop-only {
+            transition: 200ms;
+            &:hover {
+                border: 1px solid #717171;
+                border-radius: 10px;
+                cursor: default;
+            }
+        }
+
         &__img {
             width: 100%;
             height: 200px;

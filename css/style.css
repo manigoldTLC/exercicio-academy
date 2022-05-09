@@ -112,6 +112,16 @@
   border: 1px solid transparent;
   padding: 0;
 }
+@media (min-width: 1200px) {
+  .main .card {
+    transition: 200ms;
+  }
+  .main .card:hover {
+    border: 1px solid #717171;
+    border-radius: 10px;
+    cursor: default;
+  }
+}
 .main .card__img {
   width: 100%;
   height: 200px;
