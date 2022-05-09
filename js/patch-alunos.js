@@ -7,12 +7,12 @@ const observacaoValue = document.querySelector("#message-text");
 const cpfValue = document.querySelector("#cpf");
 const cepValue = document.querySelector("#cep");
 const enderecoValue = document.querySelector("#endereco");
-const numeroValue = document.querySelector("#numero");
 const complementoValue = document.querySelector("#complemento");
+const numeroValue = document.querySelector("#numero");
 const bairroValue = document.querySelector("#bairro");
 const cidadeValue = document.querySelector("#cidade");
 const estadoValue = document.querySelector("#estado");
-const telefoneValue = document.querySelector("#celular");
+const telefoneValue = document.querySelector("#telefone");
 const emailValue = document.querySelector("#email");
 
 
@@ -23,15 +23,24 @@ alunos.addEventListener("click", (e) => {
     let id = parseInt(e.target.parentElement.dataset.id);
 
     if (botaoEditar) {
-        const parent = e.target.parentNode;
+        fetch(`https://five-turma-3.herokuapp.com/alunos/${id}`)
+            .then(resposta => resposta.json())
+            .then(data => {
+                nomeValue.value = data.aluno[0].nm_pessoa;
+                nascimentoValue.value = data.aluno[0].dt_nascimento;
+                cpfValue.value = data.aluno[0].ds_cpf;
+                cepValue.value = data.aluno[0].ds_cep;
+                enderecoValue.value = data.aluno[0].ds_logradouro;
+                complementoValue.value = data.aluno[0].ds_complemento;
+                bairroValue.value = data.aluno[0].ds_bairro;
+                cidadeValue.value = data.aluno[0].ds_cidade;
+                estadoValue.value = data.aluno[0].ds_estado;
+                telefoneValue.value = data.aluno[0].ds_telefone;
+                numeroValue.value = data.aluno[0].ds_numero;
+                emailValue.value = data.aluno[0].ds_email;
+                observacaoValue.value = data.aluno[0].ds_observacao;
+            })
 
-        let nomeContent = parent.querySelector(".card__name").textContent;
-        let nascimentoContent = parent.querySelector(".card__birthdate").textContent;
-        let observacaoContent = parent.querySelector(".card__obs").textContent;
-
-        nomeValue.value = nomeContent;
-        nascimentoValue.value = nascimentoContent;
-        observacaoValue.value = observacaoContent;
     }
 
     btnEditar.addEventListener("click", (e) => {
