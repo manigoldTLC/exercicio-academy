@@ -42,104 +42,86 @@ $--hover-menu-text-color: #061B3A;
     }
 
     .card {
-        width: 45%;
-        border: 1px solid $--border-color;
-        border-radius: 10px;
-        padding: 1rem;
-
-        @include for-phone-only {
-            width: 100%;
-            border: 1px solid transparent;
-        }
-
-        @include for-desktop-only {
-            .top {
-                transition: 200ms;
-            }
-    
-            .middle {
-                transition: 400ms;
-            }
-
-            &:hover {
-                border-top: 1px solid transparent;
-                border-radius: 0 0 10px 10px;
-                cursor: default;
-    
-                .top {
-                    transform: translateY(-3rem);
-                    border-bottom: 1px solid transparent;
-                }
-    
-                .middle {
-                    transform: translateY(-2rem);
-                }
-            }
-        }
-
-        &__top {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border-bottom: 1px solid $--border-color;
-            padding-bottom: 1rem;
-        }
-
-        &__imgcontainer {
-            width: 70px;
-            height: 70px;
-            margin: 0;
-        }
+        overflow: hidden;
+        border: 1px solid transparent;
+        padding: 0;
 
         &__img {
             width: 100%;
-            height: 100%;
-            border-radius: 50px;
+            height: 200px;
             object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
 
-        &__texts {
-            display: flex;
-            flex-direction: column;
+        &__conteudo {
+            border: 1px solid $--border-color;
+            padding: 1rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            display: grid;
+            grid-template-columns: auto auto;
         }
 
         &__name {
             font-weight: bold;
-            color: $--black-text-color;
+            color: #061B3A;
+            font-size: 1.1em;
         }
 
         &__birthdate {
             color: $--grey-text-color;
+            justify-self: flex-end;
         }
 
-        &__middle {
-            margin: 1rem 0;
-            display: flex;
-            flex-direction: column;
-            padding-bottom: 1rem;
-        }
-
-        &__obs-title {
+        &__title-dados {
+            grid-column: span 2;
+            margin-bottom: .3rem;
+            margin-top: 1rem;
             font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 10px;
+            font-size: 1.07em;
             color: $--black-text-color;
+        }
+
+        &__right {
+            justify-self: flex-end;
+            color: $--grey-text-color;
+        }
+
+        &__left {
+            color: $--grey-text-color;
+        }
+
+        &__title-obs {
+            font-weight: bold;
+            font-size: 1.07em;
+            color: $--black-text-color;
+            justify-self: flex-start;
+            margin-top: 1rem;
         }
 
         &__obs {
             color: $--black-text-color;
+            grid-column: span 2;
         }
 
-        &__bottom {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        &__a {
-            text-decoration: none;
+        &__button {
+            border: 1px solid transparent;
+            padding: 10px;
+            margin-top: 2rem;
+            background-color: #398AB9;
+            color: #eeeeee;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            transition: 200ms;
+            grid-column: span 2;
 
             &:hover {
-                text-decoration: underline;
+                border: 1px solid #398AB9;
+                background-color: #fff;
+                color: #398AB9;
             }
         }
     }
