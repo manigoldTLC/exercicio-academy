@@ -13,8 +13,14 @@ const bairroValue = document.querySelector("#bairro");
 const cidadeValue = document.querySelector("#cidade");
 const estadoValue = document.querySelector("#estado");
 const telefoneValue = document.querySelector("#telefone");
-const celularValue = document.querySelector("#celular");
 const emailValue = document.querySelector("#email");
+
+cepValue.addEventListener("blur", (e) => {
+    let cep = e.target.value;
+    let script = document.createElement('script');
+    script.src = `https://viacep.com.br/ws/${cep.split("-").join("")}/json/?callback=preencheEndereco`;
+    document.body.appendChild(script);
+})
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -61,3 +67,15 @@ form.addEventListener("submit", function (e) {
             })
     }
 })
+
+function preencheEndereco(resposta) {
+    if ("erro" in resposta) {
+        alert("CEP não encontrado");
+        return;
+    }
+
+    enderecoValue.value = resposta.logradouro;
+    bairroValue.value = resposta.bairro;
+    cidadeValue.value = resposta.localidade;
+    estadoValue.value = resposta.uf;
+}

@@ -22,8 +22,11 @@ function limpaCampo(campo, nomeCampo) {
 }
 
 function validaEmail(email) {
-    let re = /\S+@\S+\.\S+/;
+    if (email.value == "") {
+        return alert("email deve ser preenchido")
+    }
 
+    let re = /\S+@\S+\.\S+/;
     return re.test(email.value);
 }
 

@@ -86,7 +86,7 @@
 
                 <div class="mb-3">
                     <label for="numero" class="form-label">Número</label>
-                    <input type="text" name="nr_sequencia" class="form-control"  id="numero">
+                    <input type="text" name="ds_numero" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="numero">
                 </div>
 
                 <div class="mb-3">
@@ -112,11 +112,6 @@
                 <div class="mb-3">
                     <label for="telefone" class="form-label">Telefone</label>
                     <input type="tel" name="ds_telefone" class="form-control" placeholder="(00) 0000-0000" id="telefone">
-                </div>
-
-                <div class="mb-3">
-                    <label for="celular" class="form-label">Celular</label>
-                    <input type="tel" name="ds_numero" class="form-control"  id="celular">
                 </div>
 
                 <div class="mb-3">
