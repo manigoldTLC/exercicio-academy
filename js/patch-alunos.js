@@ -46,32 +46,35 @@ alunos.addEventListener("click", (e) => {
     btnEditar.addEventListener("click", (e) => {
         e.preventDefault();
 
-        fetch("https://five-turma-3.herokuapp.com/alunos", {
-            method: 'PATCH',
-            headers: {
-                'Content-type': 'application/json',
-                'Access-Control-Allow-Methods': '*',
-                'Access-Control-Allow-Headers': 'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization'
-            },
-            body: JSON.stringify({
-                nm_pessoa: nomeValue.value,
-                dt_nascimento: nascimentoValue.value,
-                ds_cpf: cpfValue.value,
-                ds_email: emailValue.value,
-                ds_telefone: telefoneValue.value,
-                ds_cep: cepValue.value,
-                ds_logradouro: enderecoValue.value,
-                ds_numero: numeroValue.value,
-                ds_complemento: complementoValue.value,
-                ds_bairro: bairroValue.value,
-                ds_cidade: cidadeValue.value,
-                ds_estado: estadoValue.value,
-                ds_observacao: observacaoValue.value,
-                nr_sequencia: id
+        if (validaCpf(cpfValue.value) && validaData(nascimentoValue) && validaEmail(emailValue)) {
+            fetch("https://five-turma-3.herokuapp.com/alunos", {
+                method: 'PATCH',
+                headers: {
+                    'Content-type': 'application/json',
+                    'Access-Control-Allow-Methods': '*',
+                    'Access-Control-Allow-Headers': 'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization'
+                },
+                body: JSON.stringify({
+                    nm_pessoa: nomeValue.value,
+                    dt_nascimento: nascimentoValue.value,
+                    ds_cpf: cpfValue.value,
+                    ds_email: emailValue.value,
+                    ds_telefone: telefoneValue.value,
+                    ds_cep: cepValue.value,
+                    ds_logradouro: enderecoValue.value,
+                    ds_numero: numeroValue.value,
+                    ds_complemento: complementoValue.value,
+                    ds_bairro: bairroValue.value,
+                    ds_cidade: cidadeValue.value,
+                    ds_estado: estadoValue.value,
+                    ds_observacao: observacaoValue.value,
+                    nr_sequencia: id
+                })
             })
-        })
-            .then(resposta => resposta.json())
-            .then(() => location.reload())
-            .catch(error => console.error(error))
+                .then(resposta => resposta.json())
+                .then(() => location.reload())
+                .catch(error => console.error(error))
+        }
+
     })
 })

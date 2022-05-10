@@ -62,6 +62,8 @@ form.addEventListener("submit", function (e) {
                 alert("Aluno cadastrado com sucesso!");
             })
 
+            .then(() => location.reload())
+
             .catch((error) => {
                 alert(error);
             })

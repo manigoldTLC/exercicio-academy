@@ -23,11 +23,17 @@ function limpaCampo(campo, nomeCampo) {
 
 function validaEmail(email) {
     if (email.value == "") {
-        return alert("email deve ser preenchido")
+        alert("email deve ser preenchido");
+        return false;
     }
 
     let re = /\S+@\S+\.\S+/;
-    return re.test(email.value);
+    if (!re.test(email.value)) {
+        alert("Insira um email válido");
+        return false;
+    }
+
+    return true;
 }
 
 function validaCpf(strCPF) {
